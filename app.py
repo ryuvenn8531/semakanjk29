@@ -16,7 +16,7 @@ st.markdown(
 
     /* 2. Change text input label font size */
     div[data-testid="stWidgetLabel"] p {{
-        font-size: 22px !important;
+        font-size: 30px !important;
         font-weight: bold !important;
     }}
     </style>
