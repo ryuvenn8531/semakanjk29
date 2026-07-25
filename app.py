@@ -45,7 +45,7 @@ df = conn.read(ttl=60)
 # Input field
 user_id = st.text_input("Masukkan Nombor Kad Pengenalan Graduan:")
 
-if st.button("Search"):
+if st.button("Search",use_container_width=True):
     if user_id.strip():
         # Searches column named 'ID' (adjust column names to match your sheet)
         matches = df[df['ID'].astype(str).str.strip() == user_id.strip()]
