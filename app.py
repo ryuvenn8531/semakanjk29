@@ -21,11 +21,19 @@ st.markdown(
         font-size: 26px !important;
         font-weight: regular !important;
     }}
+
+    /* 3. Make button span full width */
+    div[data-testid="stButton"] {{
+        width: 100% !important;
+    }}
+    
+    div[data-testid="stButton"] > button {{
+        width: 100% !important;
+    }}
     </style>
     """,
     unsafe_allow_html=True
 )
-
 st.title("SEMAKAN STATUS PENGAMBILAN JUBAH ISTIADAT KONVOKESYEN ADTEC JTM KALI KE-29")
 
 # Establish connection to Google Sheet
