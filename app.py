@@ -6,52 +6,7 @@ from streamlit_gsheets import GSheetsConnection
 background_color = "#d2fcfa"
 label_text = "Masukkan Nombor Kad Pengenalan Graduan:"
 
-# --- Single Combined CSS Block ---
-st.markdown(
-    f"""
-    <style>
-    /* Force main app viewport to flex correctly on mobile screens */
-    html, body, .stApp {{
-        height: 100%;
-        min-height: -webkit-fill-available; /* Fixes iOS/Android dynamic address bar collapse */
-        overflow-y: auto !important;
-    }}
 
-    div[data-testid="stAppViewContainer"] {{
-        display: flex;
-        flex-direction: column;
-        flex: 1 1 auto;
-        height: auto !important;
-        min-height: 100%;
-    }}
-
-    div[data-testid="stMain"] {{
-        flex: 1 1 auto;
-    }}
-    /* 1. Set app background color */
-    .stApp {{
-        background-color: {background_color};
-    }}
-
-    /* 2. Change text input label font size & weight */
-    [data-testid="stWidgetLabel"] p, 
-    [data-testid="stWidgetLabel"] span {{
-        font-size: 26px !important;
-        font-weight: regular !important;
-    }}
-
-    /* 3. Make button span full width */
-    div[data-testid="stButton"] {{
-        width: 100% !important;
-    }}
-    
-    div[data-testid="stButton"] > button {{
-        width: 100% !important;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
 st.title("SEMAKAN STATUS PENGAMBILAN JUBAH ISTIADAT KONVOKESYEN ADTEC JTM KALI KE-29")
 
 # Establish connection to Google Sheet
