@@ -1,0 +1,32 @@
+import streamlit as st
+from streamlit_gsheets import GSheetsConnection
+
+st.title("SEMAKAN STATUS PENGAMBILAN JUBAH ISTIADAT KONVOKESYEN ADTEC JTM KALI KE-29")
+
+# Establish connection to Google Sheet
+conn = st.connection("gsheets", type=GSheetsConnection)
+
+# Read the sheet data (caches for 60s)
+df = conn.read(ttl=60)
+
+# Input field
+user_id = st.text_input("Masukkan Nombor Kad Pengenalan Graduan:")
+
+if st.button("Search"):
+    if user_id.strip():
+        # Searches column named 'ID' (adjust column names to match your sheet)
+        matches = df[df['ID'].astype(str).str.strip() == user_id.strip()]
+        
+        if not matches.empty:
+            st.success("Record Found!")
+            row = matches.iloc[0]
+            
+            st.write(f"**Name:** {row['NAMA']}")
+            st.write(f"**Kampus:** {row['INSTITUT']}")
+            st.write(f"**Kursus:** {row['KURSUS']}")
+            st.write(f"**Saiz Jubah:** {row['SAIZ JUBAH']}")
+            st.write(f"**Status:** {row['STATUS_JUBAH']}")
+        else:
+            st.error(f"No record found for ID: {user_id}")
+    else:
+        st.warning("Please enter an ID first.")
