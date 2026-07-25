@@ -60,8 +60,8 @@ st.title(
 # Establish connection to Google Sheet
 conn = st.connection("gsheets", type=GSheetsConnection)
 
-# Read the sheet data (caches for 60s)
-df = conn.read(ttl=60)
+# Read the sheet data (caches for 120s)
+df = conn.read(ttl=120)
 
 # --- ADD THE SANITIZATION CODE HERE ---
     # Replace 'IC_Nombor' with your actual column header name in Google Sheets
