@@ -11,23 +11,23 @@ st.markdown(
     f"""
     <style>
     /* Force main app viewport to flex correctly on mobile screens */
-    html, body, .stApp {
+    html, body, .stApp {{
         height: 100%;
         min-height: -webkit-fill-available; /* Fixes iOS/Android dynamic address bar collapse */
         overflow-y: auto !important;
-    }
+    }}
 
-    div[data-testid="stAppViewContainer"] {
+    div[data-testid="stAppViewContainer"] {{
         display: flex;
         flex-direction: column;
         flex: 1 1 auto;
         height: auto !important;
         min-height: 100%;
-    }
+    }}
 
-    div[data-testid="stMain"] {
+    div[data-testid="stMain"] {{
         flex: 1 1 auto;
-    }
+    }}
     /* 1. Set app background color */
     .stApp {{
         background-color: {background_color};
