@@ -77,9 +77,23 @@ df['ID'] = (
 user_id = st.text_input(label_text)
 
 if st.button("Search", use_container_width=True):
-    if user_id.strip():
-        # Searches column named 'ID' (adjust column names to match your sheet)
-        matches = df[df["ID"].astype(str).str.strip() == user_id.strip()]
+    clean_user_input = user_id.strip()
+
+    if clean_user_input:
+        # 1. Clean the DataFrame column thoroughly
+        cleaned_ids = (
+            df["ID"]
+            .astype(str)
+            .str.strip()
+            .str.replace(r'\.0$', '', regex=True) # Remove float decimal
+        )
+
+        # 2. Check for exact match OR match with padded leading zeros (e.g., 12 digits for IC)
+        matches = df[
+            (cleaned_ids == clean_user_input) | 
+            (cleaned_ids == clean_user_input.zfill(12)) |
+            (cleaned_ids.str.zfill(12) == clean_user_input)
+        ]
 
         if not matches.empty:
             st.success("Record Found!")
