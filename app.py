@@ -17,8 +17,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 
-st.title("User Lookup Tool")
-
 st.title("SEMAKAN STATUS PENGAMBILAN JUBAH ISTIADAT KONVOKESYEN ADTEC JTM KALI KE-29")
 
 # Establish connection to Google Sheet
