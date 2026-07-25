@@ -8,3 +8,11 @@ address = "0.0.0.0"
 [browser]
 gatherUsageStats = false
 serverAddress = "0.0.0.0"
+
+[theme]
+base = "light"
+primaryColor = "#d2fcfa"
+backgroundColor = "#d2fcfa"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#000000"
+font = "sans serif"
