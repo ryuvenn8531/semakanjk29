@@ -18,8 +18,8 @@ st.markdown(
     /* 2. Change text input label font size & weight */
     [data-testid="stWidgetLabel"] p, 
     [data-testid="stWidgetLabel"] span {{
-        font-size: 30px !important;
-        font-weight: bold !important;
+        font-size: 26px !important;
+        font-weight: regular !important;
     }}
     </style>
     """,
