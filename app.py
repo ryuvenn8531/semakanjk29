@@ -4,6 +4,7 @@ from streamlit_gsheets import GSheetsConnection
 # --- Set Background Color ---
 # Replace #f0f2f6 with any hex color, CSS color name, or RGB value you prefer
 background_color = "#d2fcfa"
+label_text = "Masukkan Nombor Kad Pengenalan Graduan:"
 
 st.markdown(
     f"""
@@ -11,6 +12,12 @@ st.markdown(
     /* Change background for the main content area */
     .stApp {{
         background-color: {background_color};
+    }}
+
+    /* 2. Change text input label font size */
+    div[data-testid="stWidgetLabel"] p {{
+        font-size: 22px !important;
+        font-weight: bold !important;
     }}
     </style>
     """,
