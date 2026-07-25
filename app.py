@@ -63,6 +63,16 @@ conn = st.connection("gsheets", type=GSheetsConnection)
 # Read the sheet data (caches for 60s)
 df = conn.read(ttl=60)
 
+# --- ADD THE SANITIZATION CODE HERE ---
+    # Replace 'IC_Nombor' with your actual column header name in Google Sheets
+    df['ID'] = (
+        df['ID']
+        .astype(str)
+        .str.strip()
+        .str.replace(r'\.0$', '', regex=True) # Removes .0 if pandas read it as float
+    )
+    # --------------------------------------
+
 # Input field
 user_id = st.text_input(label_text)
 
