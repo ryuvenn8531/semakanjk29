@@ -73,11 +73,15 @@ df['ID'] = (
     )
     # --------------------------------------
 
-# Input field
-user_id = st.text_input(label_text)
+# Updated Input field with placeholder and help tooltip
+user_id = st.text_input(
+    label=label_text,
+    placeholder="Contoh: 920101105123 atau 2026001",
+    help="Masukkan nombor Kad Pengenalan atau ID tanpa sempang/ruang."
+)
 
 if st.button("Search", use_container_width=True):
-    clean_user_input = user_id.strip()
+    clean_user_input = user_id.strip().replace('.0', '')
 
     if clean_user_input:
         # 1. Clean the DataFrame column thoroughly
