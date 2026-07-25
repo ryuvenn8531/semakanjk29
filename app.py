@@ -1,6 +1,24 @@
 import streamlit as st
 from streamlit_gsheets import GSheetsConnection
 
+# --- Set Background Color ---
+# Replace #f0f2f6 with any hex color, CSS color name, or RGB value you prefer
+background_color = "#d2fcfa"
+
+st.markdown(
+    f"""
+    <style>
+    /* Change background for the main content area */
+    .stApp {{
+        background-color: {background_color};
+    }}
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+st.title("User Lookup Tool")
+
 st.title("SEMAKAN STATUS PENGAMBILAN JUBAH ISTIADAT KONVOKESYEN ADTEC JTM KALI KE-29")
 
 # Establish connection to Google Sheet
